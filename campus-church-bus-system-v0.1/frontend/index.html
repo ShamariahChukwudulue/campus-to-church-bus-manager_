@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPCM Ride</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/index.html" class="nav-link active">Home</a></li>
+      <li><a href="/student/registration.html" class="nav-link">Trip Registration</a></li>
+      <li><a href="/student/dashboard.html" class="nav-link">Student Portal</a></li>
+      <li><a href="/admin/dashboard.html" class="nav-link">Admin Portal</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container">
+      <a href="/login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="/register.html" class="btn btn-primary btn-sm">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="container" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: 3rem; padding-bottom: 3rem;">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+      <span class="badge badge-open" style="font-size: 0.85rem; padding: 0.4rem 1rem; margin-bottom: 1rem;">
+        Official Petra Prime Church Transport Service
+      </span>
+      <h1 style="font-size: 2.75rem; font-weight: 800; color: var(--primary-dark); line-height: 1.2; margin-bottom: 1.25rem;">
+        TPCM Ride
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+        Safe, reliable, and organized transportation for university students attending Sunday church services. Register for trips, check real-time seat availability, and view your assigned bus with transparent fleet management.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/register.html" class="btn btn-primary btn-lg">Student Registration</a>
+        <a href="/login.html" class="btn btn-outline btn-lg">Login to Portal</a>
+        <a href="/admin/dashboard.html" class="btn btn-accent btn-lg">Administrator Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Feature Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎫</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-dark);">Student Trip Booking</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+          Quickly register for weekly church shuttles with your student matriculation number. Real-time fleet capacity prevents overbooking.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.75rem;">🚌</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-dark);">150 Total Fleet Capacity</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+          9 dedicated university buses ranging from 12-seaters to 30-seaters. View current bus occupancies and remaining seats in real time.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚙️</div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-dark);">Automated Allocation</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+          Administrators can assign, move, or automatically allocate registered students across available buses with strict backend capacity enforcement.
+        </p>
+      </div>
+    </div>
+
+    <!-- Fleet Specs -->
+    <div class="card" style="margin-top: 3rem; background-color: #ffffff;">
+      <div class="card-header">
+        <h2 class="card-title">Official Church Bus Fleet Overview</h2>
+        <span class="badge badge-available">9 Buses Active</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; text-align: center;">
+        <div style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">3 Buses</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">12-Seater (36 Seats)</div>
+        </div>
+        <div style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">2 Buses</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">14-Seater (28 Seats)</div>
+        </div>
+        <div style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">2 Buses</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">18-Seater (36 Seats)</div>
+        </div>
+        <div style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">1 Bus</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">20-Seater (20 Seats)</div>
+        </div>
+        <div style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">1 Bus</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">30-Seater (30 Seats)</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

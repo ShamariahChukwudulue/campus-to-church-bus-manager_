@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Fleet Management - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride Admin</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/admin/dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="/admin/students.html" class="nav-link">Student Allocations</a></li>
+      <li><a href="/admin/buses.html" class="nav-link active">Bus Fleet (9)</a></li>
+      <li><a href="/admin/trips.html" class="nav-link">Trips & Schedule</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container"></div>
+  </nav>
+
+  <main class="container" style="flex: 1; padding-top: 2rem; padding-bottom: 3rem;">
+    <!-- Page Header -->
+    <div class="page-header"
+      style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div>
+        <h1 class="page-title">University Bus Fleet Management</h1>
+        <p class="page-subtitle">Real-time status, vehicle capacities, occupancies, and passenger manifests for all 9
+          university buses.</p>
+      </div>
+
+      <div>
+        <button id="open-add-bus-modal-btn" class="btn btn-primary">
+          ➕ Add Bus to Fleet
+        </button>
+      </div>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="bus-alert-box"></div>
+
+    <!-- Fleet Grid -->
+    <div class="bus-grid" id="buses-grid-container">
+      <p style="color: var(--text-muted);">Loading university fleet...</p>
+    </div>
+  </main>
+
+  <!-- Passenger -->
+  <div class="modal-overlay" id="passengers-modal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="passengers-modal-title">Passenger Manifest</h3>
+        <button type="button" class="modal-close" id="close-passengers-modal-btn">&times;</button>
+      </div>
+      <div id="passengers-list" style="max-height: 400px; overflow-y: auto;">
+        <p style="color: var(--text-muted);">Loading passenger manifest...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bus -->
+  <div class="modal-overlay" id="add-bus-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Vehicle to Bus Fleet</h3>
+        <button type="button" class="modal-close" id="close-add-bus-modal-btn">&times;</button>
+      </div>
+
+      <div id="add-bus-alert-box"></div>
+
+      <form id="add-bus-form">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="new-bus-number">Bus Identifier / Plate Number</label>
+          <input type="text" id="new-bus-number" class="form-control" placeholder="e.g., BUS-18-03" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="new-bus-type">Bus Type</label>
+          <input type="text" id="new-bus-type" class="form-control" placeholder="e.g., 18-Seater Coaster" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="new-bus-capacity">Passenger Capacity</label>
+          <input type="number" id="new-bus-capacity" class="form-control" min="1" max="100" placeholder="18" required>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Add Bus</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/buses.js"></script>
+</body>
+
+</html>

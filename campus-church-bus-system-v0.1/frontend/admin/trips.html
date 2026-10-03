@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trips & Registration Management - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride Admin</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/admin/dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="/admin/students.html" class="nav-link">Student Allocations</a></li>
+      <li><a href="/admin/buses.html" class="nav-link">Bus Fleet (9)</a></li>
+      <li><a href="/admin/trips.html" class="nav-link active">Trips & Schedule</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container"></div>
+  </nav>
+
+  <main class="container" style="flex: 1; padding-top: 2rem; padding-bottom: 3rem;">
+    <!-- Page Header -->
+    <div class="page-header"
+      style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div>
+        <h1 class="page-title">Church Trip Schedules & Registration Control</h1>
+        <p class="page-subtitle">Schedule Sunday church trips, configure destinations, and open or close student
+          registration.</p>
+      </div>
+
+      <div>
+        <button id="open-create-trip-modal-btn" class="btn btn-primary">
+          ➕ Schedule New Trip
+        </button>
+      </div>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="trip-alert-box"></div>
+
+    <!-- Trips List Container -->
+    <div id="trips-list-container">
+      <p style="color: var(--text-muted);">Loading church trips...</p>
+    </div>
+  </main>
+
+  <!-- Create Trip -->
+  <div class="modal-overlay" id="create-trip-modal">
+    <div class="modal-content" style="max-width: 550px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Schedule New Church Shuttle Trip</h3>
+        <button type="button" class="modal-close" id="close-create-trip-modal-btn">&times;</button>
+      </div>
+
+      <div id="create-trip-alert-box"></div>
+
+      <form id="create-trip-form">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="new-destination">Church Destination</label>
+          <input type="text" id="new-destination" class="form-control" placeholder="e.g., Petra Prime Church" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="new-date">Trip Date</label>
+            <input type="text" id="new-date" class="form-control" placeholder="e.g., Next Sunday (Oct 4)" required>
+          </div>
+          <div class="form-group">
+            <label for="new-departure-time">Departure Time</label>
+            <input type="text" id="new-departure-time" class="form-control" placeholder="e.g., 07:30 AM" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="new-status">Registration Initial Status</label>
+          <select id="new-status" class="form-control" required>
+            <option value="open">Open (Students Can Register)</option>
+            <option value="closed">Closed (Registration Suspended)</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="new-description">Trip Notes & Instructions</label>
+          <input type="text" id="new-description" class="form-control"
+            placeholder="Buses depart from the Student Pavilion at 7:30 AM">
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Create Church Trip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/trips.js"></script>
+</body>
+
+</html>

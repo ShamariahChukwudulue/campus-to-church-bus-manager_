@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - TPCM Ride</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+ 
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride</span>
+    </a>
+    <div class="nav-user" id="nav-user-container">
+      <a href="/login.html" class="btn btn-outline btn-sm">Sign In</a>
+    </div>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="logo-icon">🎓</div>
+        <h1 class="auth-title">Student Registration</h1>
+        <p class="auth-subtitle">Create an account to book your Sunday church shuttle seat</p>
+      </div>
+
+      <div id="alert-box"></div>
+
+      <form id="register-form" class="auth-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control" 
+            placeholder="e.g., Jane Doe" 
+            required 
+            autocomplete="name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="studentId">Student Matriculation / ID Number</label>
+          <input 
+            type="text" 
+            id="studentId" 
+            class="form-control" 
+            placeholder="e.g., STU/2026/099" 
+            required 
+            autocomplete="off"
+          >
+          <span class="form-helper">Used to verify your identity when boarding the bus.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" class="form-control" required>
+            <option value="" disabled selected>-- Select your gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="university">University</label>
+          <select id="university" class="form-control" required>
+            <option value="" disabled selected>-- Select your university --</option>
+            <option value="Cosmopolitan University Abuja">Cosmopolitan University Abuja</option>
+            <option value="University of Abuja">University of Abuja</option>
+            <option value="Philomath University">Philomath University</option>
+            <option value="Nasarawa State University">Nasarawa State University</option>
+            <option value="Bingham University">Bingham University</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="email">University Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-control" 
+            placeholder="e.g., jane.doe@university.edu" 
+            required 
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            class="form-control" 
+            placeholder="e.g., +1 555-0199" 
+            required 
+            autocomplete="tel"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password (Minimum 6 characters)</label>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="••••••••" 
+            minlength="6" 
+            required 
+            autocomplete="new-password"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            class="form-control" 
+            placeholder="••••••••" 
+            minlength="6" 
+            required 
+            autocomplete="new-password"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          Create Student Account
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Already registered? <a href="/login.html">Sign In here</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

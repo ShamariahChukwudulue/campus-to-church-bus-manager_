@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - TPCM Ride</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride Admin</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/admin/dashboard.html" class="nav-link active">Dashboard</a></li>
+      <li><a href="/admin/students.html" class="nav-link">Student Allocations</a></li>
+      <li><a href="/admin/buses.html" class="nav-link">Bus Fleet (9)</a></li>
+      <li><a href="/admin/trips.html" class="nav-link">Trips & Schedule</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container"></div>
+  </nav>
+
+  <main class="container" id="admin-dashboard-view" style="flex: 1; padding-top: 2rem; padding-bottom: 3rem;">
+    <!-- Page Header & Trip Selector -->
+    <div class="page-header"
+      style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div>
+        <h1 class="page-title">Fleet Administration Dashboard</h1>
+        <p class="page-subtitle">Real-time overview of student registrations, seat occupancy, and bus fleet allocation.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <label for="trip-select" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Select
+          Trip:</label>
+        <select id="trip-select" class="form-control" style="width: auto; min-width: 250px; font-weight: 600;">
+          <!-- Dynamically populated -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="admin-alert-box"></div>
+
+    <!-- Action Toolbar with Prominent Auto-Allocate Button -->
+    <div class="toolbar">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-weight: 700; color: var(--primary-dark); font-size: 1.05rem;">Quick Operations:</span>
+      </div>
+
+      <div class="toolbar-actions">
+        <button id="auto-allocate-btn" class="btn btn-accent btn-lg" style="box-shadow: var(--shadow-sm);">
+          ⚡ AUTO ALLOCATE STUDENTS
+        </button>
+        <a href="/admin/students.html" class="btn btn-primary">
+          👥 Manage Student Allocations
+        </a>
+      </div>
+    </div>
+
+    <!-- Metrics Cards (Dynamic Statistics Grid) -->
+    <div class="stats-grid" id="stats-grid-container">
+      <!-- Injected dynamically by admin.js -->
+      <div class="stat-card">
+        <span class="stat-label">Loading Metrics...</span>
+        <span class="stat-value">...</span>
+      </div>
+    </div>
+
+    <!-- Fleet Status Grid -->
+    <div class="card" style="margin-top: 1rem;">
+      <div class="card-header">
+        <h2 class="card-title">University Bus Fleet Real-Time Status</h2>
+        <a href="/admin/buses.html" class="btn btn-outline btn-sm">Full Fleet Details ➔</a>
+      </div>
+
+      <div class="bus-grid" id="bus-fleet-overview" style="margin-bottom: 0;">
+        <!-- Injected dynamically by admin.js -->
+        <p style="color: var(--text-muted);">Loading fleet status...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Bus Allocations - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride Admin</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/admin/dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="/admin/students.html" class="nav-link active">Student Allocations</a></li>
+      <li><a href="/admin/buses.html" class="nav-link">Bus Fleet (9)</a></li>
+      <li><a href="/admin/trips.html" class="nav-link">Trips & Schedule</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container"></div>
+  </nav>
+
+  <main class="container" id="admin-students-view" style="flex: 1; padding-top: 2rem; padding-bottom: 3rem;">
+    <!-- Page Header & Trip Selector -->
+    <div class="page-header"
+      style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+      <div>
+        <h1 class="page-title">Student Bus Allocation & Management</h1>
+        <p class="page-subtitle">Assign students to buses, move passengers between vehicles, and balance fleet
+          occupancy.</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <label for="trip-select" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Trip:</label>
+        <select id="trip-select" class="form-control" style="width: auto; min-width: 250px; font-weight: 600;">
+          <!-- Dynamically populated -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="admin-alert-box"></div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <input type="text" id="student-search" class="search-box"
+          placeholder="🔍 Search name, ID, university, or bus...">
+
+        <select id="bus-filter" class="form-control" style="width: auto; font-size: 0.9rem;">
+          <option value="ALL">All Registrations</option>
+          <option value="UNASSIGNED">⚠️ Unassigned Students Only</option>
+        </select>
+
+        <span class="badge badge-open" id="table-count-badge">Loading...</span>
+      </div>
+
+      <div class="toolbar-actions">
+        <button id="auto-allocate-btn" class="btn btn-accent">
+          ⚡ AUTO ALLOCATE STUDENTS
+        </button>
+      </div>
+    </div>
+
+    <!-- Students Table -->
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Student Name & Matric ID</th>
+            <th>Gender</th>
+            <th>University</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Assigned Bus</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="students-table-body">
+          <tr>
+            <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+              Loading registered students...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Allocation -->
+  <div class="modal-overlay" id="allocation-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Assign / Move Student to Bus</h3>
+        <button type="button" class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+
+      <div id="modal-alert-box"></div>
+
+      <form id="modal-allocation-form">
+        <input type="hidden" id="modal-reg-id">
+
+        <div style="background-color: #f8fafc; border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="margin-bottom: 0.4rem;">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Student:</span>
+            <div id="modal-student-name" style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);"></div>
+          </div>
+          <div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Current Bus:</span>
+            <div id="modal-current-bus" style="font-size: 1rem; font-weight: 700; color: var(--primary);"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-target-bus-select">Select Destination Bus</label>
+          <select id="modal-target-bus-select" class="form-control" required style="font-size: 0.95rem;">
+            <option value="">-- Choose a Bus with Available Seats --</option>
+          </select>
+          <span class="form-helper">Buses that have reached capacity are marked [FULL] and cannot be selected.</span>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-submit-btn">Confirm Assignment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Registration - TPCM Ride</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-brand">
+      <div class="icon-bus">🚌</div>
+      <span>TPCM Ride</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="/student/dashboard.html" class="nav-link">My Bus Dashboard</a></li>
+      <li><a href="/student/registration.html" class="nav-link active">Trip Booking</a></li>
+    </ul>
+
+    <div class="nav-user" id="nav-user-container"></div>
+  </nav>
+
+  <main class="container" style="flex: 1; padding-top: 2rem; padding-bottom: 3rem;">
+    <div class="page-header" style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <h1 class="page-title">Church Shuttle Booking</h1>
+      <p class="page-subtitle">Book a seat on every trip you plan to attend (e.g. Sunday and Wednesday). Each trip can only be booked once. Please verify trip times and
+        arrival instructions.</p>
+    </div>
+
+    <!-- Trip Registration Form Content injected dynamically by student.js -->
+    <div id="trip-registration-content"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 TPCM Ride &bull; Petra Prime Church
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/student.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "campus-church-bus-system",
+  "version": "1.0.0",
+  "description": "TPCM Ride - Petra Prime Church Bus Registration & Allocation System",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "seed": "node backend/utils/seedData.js",
+    "test": "node --test tests/app.test.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "mongoose",
+    "bus-allocation",
+    "church-bus",
+    "university"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^10.1.4",
+    "mongoose": "^8.9.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.1"
+  }
+}
